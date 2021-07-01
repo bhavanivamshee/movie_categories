@@ -13,6 +13,9 @@ class Category{
         categoryContainer.classList.add = "movie-categories-add"
         categoryContainer.innerHTML += this.categoryHTML()
         categoryHolder.appendChild(categoryContainer)
+        categoryContainer.addEventListener("click", e => {
+            if (e.target.className === "movie-button") this.showMovies(e)
+        })
     }
 
     categoryHTML(){
@@ -20,5 +23,9 @@ class Category{
         <h2 class="headline">${this.category_name}</h2>
         <button type="button" class="movie-button" data-id=${this.id}>Look at your movies!</button>
         `
+    }
+
+    showMovies(e){
+
     }
 }
