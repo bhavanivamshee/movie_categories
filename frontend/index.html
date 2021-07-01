@@ -12,11 +12,10 @@
     </head>
         <body>
             <h1> All your movie categories are here! </h1>
-            <div id="movies-categories-list"></div>
             <!---test category form--->
-            <div class="container">
+            <div class="container" style="text-align:center">
                 <form class = "add-category-form">
-                    <h3> Name:</h3>
+                    <h3> Add a new category:</h3>
                     <input
                     type="text"
                     name="name"
@@ -24,8 +23,15 @@
                     placeholder="enter the category name..."
                     class="input-text"
                     />
+                    <input
+                    type="submit"
+                    name="submit"
+                    value="add"
+                    class="submit"
+                    />
                 </form>
             </div>
+            <div id="movies-categories-list"></div>
             
     </body>
 </html>
