@@ -15,10 +15,12 @@ document.addEventListener("DOMContentLoaded", function(){
             fetch(base_url, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({})
+                body: JSON.stringify({
+                    "category_name": name
+                })
             })
             .then(response => response.json())
-            .then(console.log)
+            .then(postedCategory => Category.renderCategory(postedCategory) )
         })
 
 })
