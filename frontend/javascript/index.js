@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     constCategoryFormContainer = document.querySelector(".container");
 
-    //fetched data
+    //post fetched data
 
     const newCategoryForm = document.querySelector(".add-category-form")
 
@@ -22,5 +22,23 @@ document.addEventListener("DOMContentLoaded", function(){
             .then(response => response.json())
             .then(postedCategory => Category.renderCategory(postedCategory) )
         })
+
+        //delete a category
+
+        const categoryCollection = document.querySelector("#movies-categories-list")
+        categoryCollection.addEventListener("click", event =>{event.preventDefault();
+            if(event.target.matches(".delete-btn")){
+                const id = event.target.dataset.id
+                const removeElement = document.getElementById(id)
+
+                fetch(`${base_url}/${id}`, {
+                    method: "DELETE",
+                    headers: {"Content-Type": "application/json"}
+                })
+                .then(response => response.json())
+                .then(removeElement.remove())
+            }
+        })
+
 
 })

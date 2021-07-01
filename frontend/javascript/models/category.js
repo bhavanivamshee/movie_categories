@@ -26,6 +26,7 @@ class Category{
         return `
         <h2 class="headline">${this.category_name}</h2>
         <button type="button" class="movie-button" data-id=${this.id}>Look at your movies!</button>
+        <button data-id="${this.id}" class="delete-btn"> delete category? </button>
         `
     }
 
