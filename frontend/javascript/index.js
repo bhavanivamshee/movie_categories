@@ -1,3 +1,3 @@
 document.addEventListener("DOMContentLoaded", function(){
-    API.addMovies()
+    API.addMoviesCategories()
 })
