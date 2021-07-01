@@ -14,7 +14,7 @@ class Category{
         categoryContainer.innerHTML += this.categoryHTML()
         categoryHolder.appendChild(categoryContainer)
         categoryContainer.addEventListener("click", e => {
-            if (e.target.className === "movie-button") this.showMovies(e)
+            if (e.target.className === "movie-button") this.createMovies(e)
         })
     }
 
@@ -25,7 +25,7 @@ class Category{
         `
     }
 
-    showMovies(e){
+    createMovies(e){
 
     }
 }

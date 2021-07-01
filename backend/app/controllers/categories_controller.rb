@@ -3,8 +3,12 @@ class CategoriesController < ApplicationController
 
   # GET /categories
   def index
+    if params[:movie_id]
+      @category = Category.find(params[:id])
+      @categories = @category.movies
+    else
     @categories = Category.all
-
+    end
     render json: @categories
   end
 
